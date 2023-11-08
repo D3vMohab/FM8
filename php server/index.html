@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AppStore</title>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name = "theme-color" content = "#ffffff">
+<link rel="stylesheet" href="main.css">
+
+ <script> 
+
+function refresh() {
+
+
+document.getElementById("header-title-1").textContent = document.getElementById("header-title").textContent;
+document.getElementById("today-icon").style.filter = "invert(52%) sepia(5%) saturate(196%) hue-rotate(236deg) brightness(91%) contrast(88%)";
+document.getElementById("today-navtitle").style.color = "#7c7a7d";
+document.getElementById("games-icon").style.filter = "invert(52%) sepia(5%) saturate(196%) hue-rotate(236deg) brightness(91%) contrast(88%)";
+document.getElementById("games-navtitle").style.color = "#7c7a7d";
+document.getElementById("apps-icon").style.filter = "invert(52%) sepia(5%) saturate(196%) hue-rotate(236deg) brightness(91%) contrast(88%)";
+document.getElementById("apps-navtitle").style.color = "#7c7a7d";
+document.getElementById("signer-icon").style.filter = "invert(52%) sepia(5%) saturate(196%) hue-rotate(236deg) brightness(91%) contrast(88%)";
+document.getElementById("signer-navtitle").style.color = "#7c7a7d";
+document.getElementById("search-icon").style.filter = "invert(52%) sepia(5%) saturate(196%) hue-rotate(236deg) brightness(91%) contrast(88%)";
+document.getElementById("search-navtitle").style.color = "#7c7a7d";
+
+
+setTimeout(function() {
+   window.scrollTo(0, 0);
+}, 0);
+
+
+
+}
+
+
+
+function home() {
+const date = new Date();
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+let day = date.getDate();
+let month = months[date.getMonth()];
+let dayName = days[date.getDay()];
+document.getElementById("header-title").style.marginTop = "-10px";
+let currentDate = `${dayName} ${day} ${month}`;
+document.getElementById("date").textContent = currentDate;
+document.getElementById("header-title").textContent = "Today";
+refresh();
+document.getElementById("today-icon").style.filter = "invert(30%) sepia(98%) saturate(3388%) hue-rotate(202deg) brightness(106%) contrast(104%)";
+document.getElementById("today-navtitle").style.color = "#007AFF";
+
+}
+
+
+
+function games() {
+document.getElementById("date").textContent ="";
+document.getElementById("header-title").textContent = "Games";
+document.getElementById("header-title").style.marginTop = "30px";
+refresh();
+document.getElementById("games-icon").style.filter = "invert(30%) sepia(98%) saturate(3388%) hue-rotate(202deg) brightness(106%) contrast(104%)";
+document.getElementById("games-navtitle").style.color = "#007AFF";
+
+}
+
+
+function apps() {
+document.getElementById("date").textContent ="";
+document.getElementById("header-title").style.marginTop = "30px";
+document.getElementById("header-title").textContent = "Apps";
+refresh();
+document.getElementById("apps-icon").style.filter = "invert(30%) sepia(98%) saturate(3388%) hue-rotate(202deg) brightness(106%) contrast(104%)";
+document.getElementById("apps-navtitle").style.color = "#007AFF";
+
+}
+
+
+function signer() {
+document.getElementById("date").textContent ="";
+document.getElementById("header-title").style.marginTop = "30px";
+document.getElementById("header-title").textContent = "Signer";
+refresh();
+document.getElementById("signer-icon").style.filter = "invert(30%) sepia(98%) saturate(3388%) hue-rotate(202deg) brightness(106%) contrast(104%)";
+document.getElementById("signer-navtitle").style.color = "#007AFF";
+
+}
+
+
+function search() {
+document.getElementById("date").textContent ="";
+document.getElementById("header-title").style.marginTop = "30px";
+document.getElementById("header-title").textContent = "Search";
+refresh();
+document.getElementById("search-icon").style.filter = "invert(30%) sepia(98%) saturate(3388%) hue-rotate(202deg) brightness(106%) contrast(104%)";
+document.getElementById("search-navtitle").style.color = "#007AFF";
+
+}
+
+
+
+
+
+
+
+function call() {
+
+document.getElementById("sheet").style.animation = "present 0.3s";
+
+
+setTimeout(function() {
+document.getElementById("sheet").style.width = "100%";
+document.getElementById("mainUI").style.display = "none";
+}, 300);
+
+
+}
+
+
+function cancel() {
+
+document.getElementById("sheet").style.animation = "dismiss 0.3s";
+document.getElementById("mainUI").style.display = "block";
+setTimeout(function() {
+document.getElementById("sheet").style.width = "0%";
+
+}, 300);
+
+}
+
+
+
+
+
+
+function main() {
+
+home();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const interval = setInterval(function() {
+
+
+     document.body.style.zoom = (window.innerWidth / window.outerWidth);
+
+
+
+if (document.getElementById("sheet").style.width == "100%") {
+document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#ffffff');
+} else if (window.pageYOffset >= 55) {
+document.getElementById("header").style.display = "none";
+document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#f7f7f7');
+
+} else {
+
+document.getElementById("header").style.display = "block";
+document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#ffffff');
+}
+
+
+ }, 100);
+
+}
+
+  
+
+
+
+   </script>
+
+
+</head>
+<body onload="main()">
+
+<noscript scroll="no">
+   
+</noscript>
+
+
+
+
+
+<main id="mainUI">
+
+
+
+
+
+<header id="header">
+<p id="date" style="margin-left:20px;margin-top:20px;font-weight:bold;font-size:13px;color:gray;"></p>
+<h1 id="header-title" style="margin-left:20px;margin-top:-10px;"></h1>
+</header>
+
+<header-1>
+<h4 id="header-title-1" style="margin-top:15px;"></h4>
+</header-1>
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+<button onclick="call()">Start Animation</button>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<navbar id="navbar">
+
+<navbar-item onclick="home()">
+<embed id="today-icon" src="nav-imgs/today.png">
+<h7 id="today-navtitle">Today</h7>
+</navbar-item>
+
+<navbar-item onclick="games()">
+
+<embed id="games-icon" src="nav-imgs/games.png">
+<h7 id="games-navtitle">Games</h7>
+
+</navbar-item>
+
+<navbar-item onclick="apps()">
+<embed id="apps-icon" src="nav-imgs/apps.png">
+<h7 id="apps-navtitle">Apps</h7>
+
+</navbar-item>
+
+<navbar-item onclick="signer()">
+<embed id="signer-icon" src="nav-imgs/signer.png">
+<h7 id="signer-navtitle">Signer</h7>
+
+</navbar-item>
+
+<navbar-item  onclick="search()">
+<embed id="search-icon" src="nav-imgs/search.png">
+<h7 id="search-navtitle">Search</h7>
+
+</navbar-item>
+
+
+</navbar>
+
+
+</main>
+
+
+<sheet id="sheet">
+
+<br>
+<button style="margin-left:10px;" onclick="cancel()">  Back</button>
+
+
+
+</sheet>
+
+
+</body>
+</html>
